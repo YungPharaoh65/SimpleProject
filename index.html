@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TwitterBot</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="letter.js"></script> <!-- Link to the letter.js file -->
+    <script src="time.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
+    
+    <style>
+     body {
+    margin: 0;
+    background-color: #000000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tweet-container {
+    text-align: center;
+    padding: 2rem;
+    width: 15rem;
+    float: right;
+    margin-right: 4rem;
+    background-color: #28a1f1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4rem 0rem 4rem 4rem;
+    color: white;
+}
+
+.tweet-container2 {
+    text-align: center;
+    padding: 1rem;
+    width: 90%;   
+    max-width: 100%;  
+    margin: 2rem auto; /* Center the container and add vertical margins */
+    background-color: #2f3031;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4rem;
+    font-weight: 100;
+    color: white;
+    box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+hr {
+    height: 0.5px; /* Set a positive value for the height */
+    border: none; /* Remove the default border */
+    background-color: #ccc; /* Set the line color */
+    margin: 20px 0; /* Add some margin for spacing */
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+.tweet {
+    float: right;
+    color: aliceblue;
+    margin-left: -1rem;
+}
+
+.movearrow {
+    margin-left: 5rem;
+}
+
+.movearrow, .movearrow2 {
+    color: #28a1f1;
+}
+
+.movearrow2 { 
+    margin-right: 5rem;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .tweet-container {
+        width: 80%;  
+        float: none; 
+        margin: 0 auto; /* Center align */
+    }
+    .tweet-container2 {
+        width: 85%; /* Slightly smaller width */
+        margin: 1rem auto; /* Adjust margins */
+    }
+    p {
+        font-size: 1.1rem; /* Gradually reduce font size for smaller screens */
+    }
+}
+
+@media (max-width: 580px) {
+    .tweet-container {
+        width: 60%; /* Make tweet container full width for very small screens */
+        height: 20rem;
+margin-bottom: -24rem;
+    }
+
+     
+
+    
+    p {
+        font-size: 1rem; /* Further reduce font size for mobile */
+    }
+
+    .iclas{
+        margin-left: -4.7rem; /* Further reduce font size for mobile */
+    }
+
+    .movearrow, .movearrow2 {
+         color: purple;
+         text-align: center;
+         color: transparent;
+    }
+}
+
+    </style>
+</head>
+<body>
+<hr>
+    <div class="tweet-container">
+        <h1>dear you...</h1>
+        <p id="quoteDisplay">typing...</p>
+
+        <p class="tweet"></p> <!-- This will be updated by JavaScript -->
+
+    </div>
+<br><br><br><br><br><br><br><br>  <br><br><br><br></b><br><br><br><br><br><br><br><br><b> 
+    <div class="tweet-container2">  <p><i class="fas fa-envelope movearrow2"></i><i class="iclas">no messages, just luv ... </i><i class="fas fas fa-angle-double-right  movearrow"></i> </div>
+   
+
+        <script>
+            function formatDateTime() {
+                // current date and time
+                const now = new Date();
+    
+                // Format date, year, and time
+                const date = now.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+                const year = now.getFullYear();
+                const time = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+    
+                // Create the formatted string
+                const formattedString = `${date}, ${year}, ${time}.`;
+    
+                // Update the HTML
+                const tweetElement = document.querySelector('.tweet');
+                tweetElement.textContent = formattedString; // Use textContent to set the text
+            }
+    
+            // Call the function to format and display the date and time
+            formatDateTime();
+        </script>
+</body>
+</html>
